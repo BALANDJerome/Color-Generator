@@ -1,18 +1,25 @@
-// Créer 3 variables pour stocker 3 chiffres aléatoires
+let pause = true
 
-// Donner au body une couleur de fond en rgb()
-
-// Montrer sur le body la couleur rgb()
-
-// const backgroundBody = document.querySelector("body")
-generateColor = () => {
-  setTimeout(() => {
-    let color1 = [Math.floor(Math.random() * 256)];
-    let color2 = [Math.floor(Math.random() * 256)];
-    let color3 = [Math.floor(Math.random() * 256)];
+const generateColor = () => {
+  if (pause === false) {
+    let color1 = [Math.floor(Math.random() * 255)];
+    let color2 = [Math.floor(Math.random() * 255)];
+    let color3 = [Math.floor(Math.random() * 255)];
     rgb.textContent = `rgb(${color1},${color2},${color3})`;
     document.body.style.background = rgb.innerText;
-    generateColor()
-  }, 2000)
+    setTimeout(() => {
+      generateColor()
+    }, 2000)
+  }
 }
-generateColor()
+btn.addEventListener("click", () => {
+  if (pause === true) {
+    pause = !pause
+    generateColor()
+    btn.textContent = "pause"
+  } else {
+    pause = !pause
+    btn.textContent = "start"
+  }
+})
+console.log();
