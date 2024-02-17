@@ -45,15 +45,16 @@ let interval = null
 btn.addEventListener("click", () => {
   anim()
   if (interval === null) {
+    generateColor()
     interval = setInterval(generateColor, 2000)
     setTimeout(() => {
       btn.textContent = "Stop"
-    }, 1000)
+    }, 500)
   } else {
     clearInterval(interval)
     interval = null
     setTimeout(() => {
       btn.textContent = "Start"
-    }, 1000)
+    }, 500)
   }
 })

@@ -3,7 +3,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 98vh;
+  min-height: 85vh;
   background: rgb(255, 255, 255);
 }
 h2 {
@@ -30,7 +30,7 @@ h2 {
   transform: scale(1.05);
 }
 .btnAnim {
-  animation: 2s click;
+  animation: 1s click ease-in-out;
 }
 @keyframes click {
   50% {
