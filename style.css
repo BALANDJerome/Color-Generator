@@ -24,8 +24,27 @@ h2 {
   border-radius: 20px;
   box-shadow: 0 0 12px 0 black;
   cursor: pointer;
-  transition: 1s;
+  transition: 0.3s;
 }
 #btn:hover {
   transform: scale(1.05);
+}
+.btnAnim {
+  animation: 2s click;
+}
+@keyframes click {
+  50% {
+    transform: rotateX(90deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+}
+@media screen and (max-width: 440px) {
+  h2 {
+    font-size: 1.6rem;
+  }
+  #btn {
+    font-size: 1rem;
+  }
 }
